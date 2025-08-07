@@ -108,9 +108,10 @@ const Index = () => {
       <HeroSection />
       
       {/* Featured Services Section */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-foreground mb-8">
+      <section className="py-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-card/20 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold text-foreground mb-8 font-display">
             Popular services
           </h2>
           
@@ -133,13 +134,14 @@ const Index = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-foreground mb-8">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold text-foreground mb-12 font-display text-center">
             Explore our marketplace
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
               { name: "Programming & Tech", color: "bg-blue-500" },
               { name: "Graphics & Design", color: "bg-purple-500" },
@@ -154,12 +156,13 @@ const Index = () => {
             ].map((category) => (
               <div 
                 key={category.name}
-                className="group cursor-pointer"
+                className="group cursor-pointer hover-glow"
               >
-                <div className={`${category.color} h-32 rounded-lg mb-3 relative overflow-hidden group-hover:scale-105 transition-transform duration-300`}>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                <div className={`${category.color} h-36 rounded-xl mb-4 relative overflow-hidden group-hover:scale-105 transition-all duration-500 shadow-xl`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-black/20 group-hover:from-white/10 group-hover:to-black/10 transition-all duration-500" />
+                  <div className="absolute inset-0 backdrop-blur-[1px] group-hover:backdrop-blur-0 transition-all duration-500" />
                 </div>
-                <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                <h3 className="font-medium text-foreground group-hover:text-primary transition-all duration-300 text-center">
                   {category.name}
                 </h3>
               </div>
